@@ -24,7 +24,7 @@ sudo ../infra/infra kind cluster create -v PR_NUMBER:$PR_NUMBER -v CLUSTER_NAME:
 
 - Remove taint(node-role.kubernetes.io/master) from prombench-control-plane node for deploying nginx-ingress-controller
 ```
-kubectl taint nodes $CLUSTER_NAME-control-plane node-role.kubernetes.io/master-
+sudo kubectl taint nodes $CLUSTER_NAME-control-plane node-role.kubernetes.io/master-
 ```
 
 ### Deploy monitoring components
