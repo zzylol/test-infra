@@ -16,9 +16,11 @@ Run prombench tests in [Kubernetes In Docker](https://kind.sigs.k8s.io/).
 export CLUSTER_NAME=prombench
 export PR_NUMBER=<PR to benchmark against the selected $RELEASE>
 
-../infra/infra kind cluster create -v PR_NUMBER:$PR_NUMBER -v CLUSTER_NAME:$CLUSTER_NAME \
+sudo ../infra/infra kind cluster create -v PR_NUMBER:$PR_NUMBER -v CLUSTER_NAME:$CLUSTER_NAME \
     -f manifests/cluster_kind.yaml
 ```
+
+(Add sudo because docker pull needs permission)
 
 - Remove taint(node-role.kubernetes.io/master) from prombench-control-plane node for deploying nginx-ingress-controller
 ```
