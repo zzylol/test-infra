@@ -71,6 +71,12 @@ echo "Grafana: http://$INTERNAL_IP:$NODE_PORT/grafana"
 echo "Prometheus: http://$INTERNAL_IP:$NODE_PORT/prometheus-meta"
 echo "Logs: http://$INTERNAL_IP:$NODE_PORT/grafana/explore"
 ```
+
+Because of INTERNAL_IP:
+```bash
+kubectl port-forward POD port:port
+```
+
 ## Usage
 
 
